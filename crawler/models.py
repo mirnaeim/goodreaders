@@ -9,12 +9,11 @@ class Book(models.Model):
                            blank=False, verbose_name='Link')
     author = models.CharField(max_length=255, null=False, blank=False, verbose_name='Autor')
     rating = models.CharField(max_length=255, null=False, blank=False, verbose_name='Rating')
-    description = models.TextField(null=False, blank=False, verbose_name='Description')
 
     class Meta:
         verbose_name = 'Book'
         verbose_name_plural = 'Books'
-        ordering = ('id',)
+        ordering = ('rating',)
 
     def __str__(self):
         return self.title
